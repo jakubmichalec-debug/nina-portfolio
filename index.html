@@ -1,0 +1,721 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Nina Hajdikova Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Jost:wght@300;400;500;600&family=WindSong&family=Space+Mono&display=swap">
+<style>
+:root{
+  --ink:#141212; --ink2:#1e1a1a; --line:#3a3333; --bone:#ece6dc; --mute:#a99f98;
+  --pink:#f38ccc; --neon:#fa3eb2; --blush:#f38ccc;
+  --mist:#cbc2bf; --petal:#f38ccc; --rose:#f38ccc; --fuchsia:#fa3eb2; --plum:#191714; --nink:#191714;
+  --display:'Anton','Impact','Arial Narrow',sans-serif;
+  --body:'Jost','Helvetica Neue',Arial,sans-serif;
+  --script:'WindSong','Snell Roundhand',cursive;
+  --mono:'Space Mono',ui-monospace,monospace;
+  --gut:clamp(16px,4vw,56px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--bone);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+#page{position:relative;overflow-x:clip}
+.wrap{padding-inline:var(--gut);max-width:1440px;margin-inline:auto;position:relative}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.92;margin:0;text-wrap:balance}
+h2{font-size:clamp(48px,8vw,120px);color:var(--pink)}
+h3{font-size:clamp(26px,3vw,40px)}
+p{margin:0 0 1em;max-width:62ch}
+section{padding-block:clamp(64px,9vw,140px)}
+
+/* THREAD */
+#thread{position:absolute;left:0;top:0;width:100%;pointer-events:none;z-index:40;overflow:visible}
+#thread .base{fill:none;stroke:var(--neon);stroke-width:2.5;stroke-dasharray:7 11;stroke-linecap:round;opacity:.22}
+#thread .drawn{fill:none;stroke:var(--neon);stroke-width:3;stroke-dasharray:7 11;stroke-linecap:round}
+#thread .needle{fill:none;stroke:var(--neon);stroke-width:3;stroke-linecap:round}
+@media(max-width:760px){#thread{display:none}}
+
+/* NAV */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px var(--gut);background:rgba(20,18,18,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .logo{font-family:var(--script);font-size:34px;line-height:1;color:var(--pink);text-decoration:none}
+nav ul{display:flex;gap:clamp(12px,2.4vw,32px);list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+nav a{text-decoration:none;color:var(--bone)}
+nav ul a:hover{color:var(--pink)}
+@media(max-width:640px){nav ul li:nth-child(n+4){display:none}}
+nav li.has-drop{position:relative}
+nav .drop{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(4px);margin:0;padding:7px;list-style:none;background:rgba(20,18,18,.97);border:1px solid var(--line);border-radius:8px;min-width:190px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,transform .18s;z-index:70}
+nav li.has-drop:hover .drop,nav li.has-drop:focus-within .drop{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+nav .drop li{padding:0}
+nav .drop a{display:block;padding:9px 14px;border-radius:5px;white-space:nowrap;font-size:11px;letter-spacing:.08em}
+nav .drop a:hover{background:var(--line);color:var(--pink)}
+
+/* HERO */
+.hero{position:relative;padding-top:clamp(24px,5vw,64px);padding-bottom:0;overflow:hidden}
+.hero .top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hero h1{font-size:clamp(90px,24vw,400px);color:var(--pink);position:relative;z-index:1;margin-top:.1em}
+.hero h1.second{margin-top:-.06em;font-size:clamp(60px,13.2vw,226px)}
+.hero .girl{position:absolute;z-index:2;right:clamp(2%,9vw,14%);top:clamp(30px,6vw,90px);width:clamp(150px,27vw,400px)}
+.hero .cut{width:100%;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));animation:bob 7s ease-in-out infinite}
+.hero .bag{position:absolute;z-index:3;width:22%;filter:drop-shadow(0 0 12px rgba(243,140,204,.45)) drop-shadow(0 14px 22px rgba(0,0,0,.55));pointer-events:none}
+.hero .b1{left:-20%;top:2%;rotate:-14deg;animation:bob 6s -1s ease-in-out infinite}
+.hero .b2{right:-16%;top:-2%;rotate:12deg;animation:bob 8s -3s ease-in-out infinite;width:20%}
+.hero .b3{left:-36%;top:36%;rotate:-8deg;animation:bob 7s -2s ease-in-out infinite;width:25%}
+.hero .b4{right:-24%;top:38%;rotate:16deg;animation:bob 7s -4s ease-in-out infinite;width:21%}
+.hero .b5{left:-16%;top:70%;rotate:-18deg;animation:bob 9s -2s ease-in-out infinite;width:20%}
+.hero .b6{right:-12%;top:74%;rotate:8deg;animation:bob 8s -5s ease-in-out infinite;width:18%}
+@keyframes bob{50%{translate:0 -12px}}
+.hero .intro{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:end;padding-block:clamp(28px,5vw,64px)}
+.hero .lede{font-size:clamp(22px,2.4vw,34px);line-height:1.25;font-weight:300;max-width:24ch}
+.hero .lede b{font-weight:500;color:var(--pink)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:9px 18px;border:1px solid var(--pink);border-radius:999px;text-decoration:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
+.btn.solid{background:var(--pink);color:var(--ink)}
+.btn:hover{background:var(--bone);border-color:var(--bone);color:var(--ink)}
+body.niana-mode .home-only,body.pp-mode .home-only,body.co-mode .home-only,body.sd-mode .home-only{display:none!important}
+#niana-deep{display:none}
+body.niana-mode #niana-deep{display:block}
+.explore-wrap{margin:20px 0 0;padding-bottom:clamp(48px,7vw,96px)}
+body.niana-mode .explore-wrap{display:none}
+body.pp-mode .niana-teaser,body.co-mode .niana-teaser,body.sd-mode .niana-teaser{display:none!important}
+body:not(.niana-mode) .niana-back{display:none!important}
+body.niana-mode .niana-back{padding-top:clamp(28px,4vw,56px)}
+body.niana-mode .niana-teaser .nhero{padding-top:clamp(20px,3vw,40px)}
+.back-wrap{display:none;margin:0 0 10px}
+body.niana-mode .back-wrap,body.pp-mode .back-wrap,body.co-mode .back-wrap,body.sd-mode .back-wrap{display:block}
+#pp-deep,#co-deep,#sd-deep{display:none}
+body.pp-mode #pp-deep{display:block}
+body.co-mode #co-deep{display:block}
+body.sd-mode #sd-deep{display:block}
+.nbtn{display:inline-block;padding:14px 30px;border:1.5px solid var(--neon);border-radius:999px;background:var(--neon);color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.2s}
+.nbtn:hover{background:var(--mist);color:var(--neon)}
+.nback{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:1px solid var(--nink);color:var(--nink);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer}
+.nback:hover{background:var(--nink);color:var(--mist)}
+
+.seek{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
+.seek span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--line);border-radius:99px;color:var(--bone)}
+.seek span.on{border-color:var(--pink);color:var(--pink)}
+@media(max-width:760px){.hero .intro{grid-template-columns:1fr}.hero .girl{right:12%}.hero .b3,.hero .b5{display:none}.hero .b1{left:-22%}.hero .b2{right:-12%}.hero .b4{right:-15%}.hero .b6{right:-8%}}
+.marquee{overflow:hidden;background:var(--neon);color:var(--ink)}
+.marquee div{display:flex;width:max-content;animation:slide 32s linear infinite}
+.marquee span{font-family:var(--display);text-transform:uppercase;font-size:clamp(22px,3vw,40px);padding:12px 22px;white-space:nowrap}
+.marquee span::after{content:"";display:inline-block;width:.42em;height:.42em;border-radius:50%;background:var(--ink);margin-left:44px;vertical-align:.08em}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee div,.hero .cut,.hero .bag,.pulse::after{animation:none!important}}
+
+/* ABOUT / ROLES */
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,80px);align-items:start}
+.about .ph{position:relative}
+.about .ph img.main{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2px}
+.about .ph img.sticker{position:absolute;right:-8%;bottom:-6%;width:34%;filter:drop-shadow(0 14px 24px rgba(0,0,0,.6));transform:rotate(6deg)}
+.about h2{margin-bottom:.4em}
+.about p.big{font-size:clamp(20px,2vw,27px);line-height:1.4;color:var(--bone)}
+@media(max-width:520px){.role h3{white-space:normal}}
+@media(max-width:760px){.about{grid-template-columns:1fr}.about .ph{max-width:420px}}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,2vw,28px);margin-top:44px}
+.role{padding:clamp(22px,3vw,40px);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;gap:14px;background:var(--ink2);transition:.25s}
+.role:hover{border-color:var(--pink);transform:translateY(-4px)}
+.role h3{color:var(--pink);font-size:clamp(28px,3.1vw,46px);white-space:nowrap}
+.role p{color:var(--bone);margin:0}
+.role .proof{display:grid;grid-template-columns:repeat(3,1fr);align-items:start;gap:14px;text-align:center;font-family:var(--display);font-size:24px;color:var(--neon);text-transform:uppercase}
+.role .proof>div{white-space:nowrap}.role .proof>div:nth-child(1){justify-self:start}.role .proof>div:nth-child(2){justify-self:center}.role .proof>div:nth-child(3){justify-self:end}
+.role .proof small{white-space:normal;max-width:10.5em;margin-inline:auto}
+@media(max-width:520px){.role .proof{font-size:20px;gap:8px}}
+.role .proof small{display:block;margin-top:4px;line-height:1.35;font-family:var(--body);font-size:13px;color:var(--mute);text-transform:none;letter-spacing:0}
+.role .tools{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--mute);text-transform:uppercase;margin-top:auto}
+.also{margin-top:26px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+
+/* NIANA */
+.niana{background:var(--mist);color:var(--nink);padding-block:0;position:relative}
+.niana .eyebrow,.niana .lbl{color:#7b6572}
+.nhero{padding-block:clamp(56px,8vw,120px) clamp(32px,5vw,64px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:start}
+.nhero{position:relative;z-index:1}
+.nhero .mark{height:clamp(52px,5.4vw,78px);width:auto;display:block;margin:34px 0 26px}
+.nhero h2{color:var(--nink);font-family:var(--body);font-weight:300;text-transform:none;font-size:clamp(28px,4.2vw,62px);line-height:1.05;letter-spacing:-.02em;margin-top:40px}
+.nhero h2 em{font-style:normal;color:var(--neon);font-weight:500}
+.nhero p{font-size:19px;margin-top:36px;color:#3b2c35}
+.nhero .redbag{border-radius:2px;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 40%}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:42px}
+.chips span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--nink);border-radius:999px}
+.chips span{background:var(--pink);border-color:var(--pink);color:var(--ink)}
+.chips span.hot{background:var(--fuchsia);border-color:var(--fuchsia);color:#fff}
+@media(max-width:860px){.nhero{grid-template-columns:1fr}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(10px,1.6vw,20px);padding-bottom:clamp(40px,6vw,80px)}
+.stat{background:var(--plum);color:var(--mist);padding:26px 24px 24px;border-radius:4px;position:relative;overflow:hidden}
+.stat:nth-child(2){background:var(--rose);color:var(--nink)}
+.stat:nth-child(3){background:var(--nink);color:var(--mist)}
+.stat:nth-child(4){background:var(--petal);color:var(--nink)}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(40px,5vw,72px);line-height:1;text-transform:uppercase}
+.stat span{display:block;margin-top:10px;font-size:15px;line-height:1.35;opacity:.85}
+.fine{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:#7b6572;text-transform:uppercase;margin:-28px 0 clamp(40px,6vw,80px)}
+
+.chap{padding-block:clamp(56px,7vw,110px);border-top:1px solid rgba(42,31,38,.16);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,72px);align-items:start}
+.chap .txt{position:sticky;top:90px}
+.chap h3{font-family:var(--body);font-weight:400;text-transform:none;font-size:clamp(30px,3.4vw,50px);line-height:1.05;letter-spacing:-.02em;margin:8px 0 16px;color:var(--nink)}
+.chap p{color:#3b2c35;font-size:16.5px}
+.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--plum)}
+.shot{border-radius:2px;box-shadow:0 22px 50px -20px rgba(42,31,38,.5);width:100%}
+.gcover{aspect-ratio:4/3;object-fit:cover}
+.strip3{display:flex;gap:0;border-radius:2px;overflow:hidden;box-shadow:0 22px 50px -20px rgba(42,31,38,.5)}
+.strip3>div{flex:1;min-width:0}
+.strip3 img{width:100%;display:block;aspect-ratio:.54;object-fit:cover}
+.strip3caps{display:flex;gap:0;margin-top:8px}
+.strip3caps>div{flex:1;text-align:center}
+.bcover{aspect-ratio:2.3/1;object-fit:cover}
+.pcover{aspect-ratio:3/4;object-fit:cover}
+.sdiag{width:70%}
+@media(max-width:860px){.sdiag{width:100%}}
+.plain{width:100%;height:auto;filter:drop-shadow(0 18px 28px rgba(25,23,20,.28))}
+.mosaic{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(10px,1.6vw,22px)}
+.mosaic>*{min-width:0}
+.c12{grid-column:span 12}.c8{grid-column:span 8}.c6{grid-column:span 6}.c5{grid-column:span 5}.c4{grid-column:span 4}.c3{grid-column:span 3}
+.cover{width:100%;height:100%;object-fit:cover}
+.ar34{aspect-ratio:3/4}.ar11{aspect-ratio:1}.ar916{aspect-ratio:9/16}
+.cap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#7b6572;margin-top:8px}
+@media(max-width:860px){.chap{grid-template-columns:1fr}.chap .txt{position:static}.c8,.c6,.c5{grid-column:span 12}.c4{grid-column:span 6}}
+
+/* journey */
+.journey{padding-block:clamp(48px,6vw,90px);border-top:1px solid rgba(42,31,38,.16)}
+.journey h3{font-family:var(--body);font-weight:400;text-transform:none;font-size:clamp(30px,3.4vw,50px);letter-spacing:-.02em;color:var(--nink);margin:8px 0 34px}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:15px;border-top:3px dashed var(--rose)}
+.step{position:relative;padding:0 18px 0 0}
+.dot{width:32px;height:32px;border-radius:50%;background:var(--mist);border:3px solid var(--plum);position:relative;z-index:1;margin-bottom:16px}
+.step.now .dot{background:var(--fuchsia);border-color:var(--fuchsia)}
+.pulse::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:3px solid var(--fuchsia);animation:pulse 2s ease-out infinite}
+@keyframes pulse{to{transform:scale(1.9);opacity:0}}
+.step b{display:block;font-weight:500;font-size:17px;color:var(--nink);margin-bottom:4px}
+.step span{font-size:14.5px;line-height:1.4;color:#3b2c35;display:block}
+.step.now b{color:var(--fuchsia)}
+@media(max-width:900px){.steps{grid-template-columns:1fr;gap:22px}.steps::before{left:15px;right:auto;top:0;bottom:0;border-top:0;border-left:3px dashed var(--rose)}.step{padding:0 0 0 52px}.dot{position:absolute;left:0;top:0;margin:0}}
+
+/* reels */
+.reels{padding-block:clamp(56px,7vw,110px);border-top:1px solid rgba(42,31,38,.16)}
+.reels .head{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,72px);align-items:end;margin-bottom:34px}
+.reels h3{font-family:var(--body);font-weight:400;text-transform:none;font-size:clamp(30px,3.4vw,50px);letter-spacing:-.02em;color:var(--nink);margin:8px 0 0}
+.reels .head p{margin:0;color:#3b2c35;font-size:16.5px}
+@media(max-width:860px){.reels .head{grid-template-columns:1fr}}
+.phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(14px,2vw,28px)}
+.phone{border-radius:34px;border:8px solid var(--nink);background:var(--nink);overflow:hidden;position:relative;aspect-ratio:9/16;box-shadow:0 30px 60px -24px rgba(42,31,38,.6);transition:transform .35s}
+.phone:nth-child(odd){transform:rotate(-2deg)}.phone:nth-child(even){transform:rotate(2deg) translateY(14px)}
+.phone:hover{transform:rotate(0) translateY(-6px)}
+.phone img,.phone video{width:100%;height:100%;object-fit:cover}
+.phone .pl{position:absolute;inset:auto 0 0 0;padding:34px 14px 14px;background:linear-gradient(180deg,transparent,rgba(42,31,38,.85));color:#fff;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+.phone video{cursor:pointer}
+@media(max-width:600px){.phones{grid-template-columns:1fr 1fr}.phone{border-width:5px;border-radius:24px}.phone .pl{font-size:9px;padding:24px 10px 10px}}
+.phone .snd{position:absolute;right:12px;top:10px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(25,23,20,.55);color:#fff;font-size:15px;line-height:34px;text-align:center;cursor:pointer;padding:0}
+.phone .snd:hover{background:var(--fuchsia)}
+.phone .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(251,247,248,.9);display:grid;place-items:center}
+.phone .play::before{content:"";border-left:18px solid var(--fuchsia);border-block:11px solid transparent;margin-left:5px}
+.phone .plat{position:absolute;left:12px;top:12px;background:var(--petal);color:var(--plum);font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:99px}
+.edit{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:70px;border-top:1px dashed var(--rose)}
+.edit div{padding:22px 18px 0 0}
+.edit b{font-family:var(--display);font-weight:400;font-size:28px;text-transform:uppercase;color:var(--plum);display:block}
+.edit span{font-size:15px;color:#3b2c35;display:block;margin-top:6px}
+@media(max-width:760px){.edit{grid-template-columns:1fr 1fr}}
+
+.browser{border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 30px 60px -24px rgba(42,31,38,.55);border:1px solid rgba(42,31,38,.25)}
+.browser .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#d6d0d2;font-family:var(--mono);font-size:11px;color:#5b4b55}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:#b3a8ad;display:block}
+.browser .bar em{font-style:normal;margin-left:10px;padding:3px 12px;background:var(--mist);border-radius:99px;flex:1;max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.browser .scroll{max-height:560px;overflow-y:auto;background:var(--mist)}
+.browser .scroll img{width:100%}
+.mob{border-radius:34px;border:8px solid var(--nink);overflow:hidden;background:var(--nink);box-shadow:0 30px 60px -24px rgba(42,31,38,.55)}
+.strip{display:flex;gap:clamp(10px,1.4vw,18px);overflow-x:auto;padding-bottom:14px;scroll-snap-type:x proximity;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut)}
+.strip img{height:clamp(320px,46vw,560px);width:auto;max-width:none;border-radius:2px;scroll-snap-align:start;flex:none}
+.strip::-webkit-scrollbar{height:6px}.strip::-webkit-scrollbar-thumb{background:var(--plum);border-radius:9px}
+
+/* STUDIES */
+.studies{background:var(--ink2);border-block:1px solid var(--line)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:1px solid var(--line)}
+@media(max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.tiles{grid-template-columns:1fr}}
+.tile{padding:26px 24px 30px 0;border-bottom:1px solid var(--line)}
+.tile h3{color:var(--bone);font-size:clamp(26px,2.6vw,34px);margin-bottom:13px}
+.tile p{color:var(--mute);font-size:15px;margin:0}
+.tile .t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--blush);text-transform:uppercase;display:block;margin-top:10px}
+.tile.hi h3{color:var(--pink)}
+.note{margin-top:22px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
+
+/* MORE WORK */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(14px,2vw,28px);margin-top:44px}
+.proj{display:flex;flex-direction:column;gap:12px}
+.proj .frame{aspect-ratio:4/3;overflow:hidden;background:var(--ink2);border-radius:2px}
+.proj .frame img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.proj:hover .frame img{transform:scale(1.05)}
+.proj.slot .frame{border:1px dashed #6a5c5c;display:grid;place-items:center;text-align:center;padding:20px;color:var(--mute);font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.proj.slot .frame span{display:block;color:var(--blush);font-family:var(--display);font-size:clamp(28px,3vw,40px);letter-spacing:0;line-height:1;margin-bottom:10px}
+.proj h3{font-size:26px;color:var(--bone)}
+.proj p{color:var(--mute);font-size:15px;margin:0}
+.proj .tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--pink)}
+
+/* EDU */
+.edu{border-top:1px solid var(--line);margin-top:44px}
+.edu .row{display:grid;grid-template-columns:minmax(120px,1fr) 3fr 4fr;gap:16px 32px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.edu .yr{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--blush)}
+.edu h3{color:var(--bone);font-size:clamp(26px,2.8vw,38px)}
+.edu p{margin:0;color:var(--mute);font-size:15.5px}
+.edu .row.now h3{color:var(--pink)}
+@media(max-width:760px){.edu .row{grid-template-columns:1fr;gap:6px}}
+
+/* CONTACT */
+.contact{position:relative;overflow:hidden;padding-bottom:0}
+.contact .huge{font-family:var(--display);text-transform:uppercase;font-size:clamp(60px,15vw,250px);color:var(--bone);line-height:.86;margin-top:12px}
+.contact .huge span{color:var(--pink)}
+.contact .cols{display:flex;flex-direction:column;gap:22px;align-items:flex-start;padding-block:36px 48px;max-width:min(560px,62%)}
+.contact .cols p{margin:0;font-size:20px}
+.btn.static{text-transform:none;cursor:text;user-select:text}
+.btn.static:hover{background:var(--pink);border-color:var(--pink);color:var(--ink)}
+.contact .cutwrap{position:absolute;right:clamp(0%,3vw,6%);bottom:0;width:clamp(150px,26vw,380px);z-index:1;pointer-events:none}
+footer{padding:20px var(--gut);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+</style>
+
+<div id="page">
+<svg id="thread" aria-hidden="true"><defs><mask id="tmask" maskUnits="userSpaceOnUse"><path id="tmaskpath" fill="none" stroke="#fff" stroke-width="8"/></mask></defs><path class="base" id="tbase"/><path class="drawn" id="tdrawn" mask="url(#tmask)"/><g id="tneedle" class="needle"><path d="M-20 0 L26 0"/><ellipse cx="-14" cy="0" rx="4" ry="1.6"/></g></svg>
+
+<nav>
+  <a class="logo" href="#top" aria-label="Nina Hajdikova" onclick="exitNiana()">Nina H.</a>
+  <ul>
+    <li><a href="#about" onclick="exitNiana()">About</a></li>
+    <li><a href="#niana" onclick="enterNiana(event)">Niana</a></li>
+    <li class="has-drop"><a href="#more" onclick="exitNiana()">Projects</a>
+      <ul class="drop">
+        <li><a href="#pp" onclick="enterProj('pp',event)">Pinball machine</a></li>
+        <li><a href="#co" onclick="enterProj('co',event)">Coachella rebrand</a></li>
+        <li><a href="#sd" onclick="enterProj('sd',event)">Shot Dispenser</a></li>
+      </ul>
+    </li>
+    <li><a href="#studies" onclick="exitNiana()">Skills</a></li>
+    <li><a href="#contact" onclick="exitNiana()">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero home-only" id="top">
+  <div class="wrap" data-knot="l">
+    <div class="top"><span class="eyebrow">Portfolio &mdash; 2026</span><span class="eyebrow">Antwerp &nbsp;/&nbsp; Slovakia</span></div>
+    <h1>Nina</h1>
+    <h1 class="second">Hajdikova</h1>
+    <div class="girl">
+      <img class="cut" src="a/nina-cut-pink.png" alt="Nina Hajdikova">
+      <img class="bag b1" src="a/cut1.png" alt=""><img class="bag b2" src="a/cut7.png" alt=""><img class="bag b3" src="a/cut5.png" alt=""><img class="bag b4" src="a/cut2.png" alt=""><img class="bag b5" src="a/cut6.png" alt=""><img class="bag b6" src="a/cut3.png" alt="">
+    </div>
+    <div class="intro">
+      <p class="lede">I build <b>brands, content</b> and audiences from scratch.</p>
+      <div>
+        <p style="font-size:17px"><b style="font-weight:500">Hi, I&rsquo;m Nina</b>, a Multimedia &amp; Creative Technologies student from Slovakia with a love for marketing and an eye for the small details that make a brand feel right.</p>
+        <p style="font-size:17px">Right now I&rsquo;m building <b style="font-weight:500">Niana</b>, my own handmade bag brand, from the first sketch to launch.</p>
+        <div class="seek"><span class="on">3-month internship</span></div>
+        <div class="cta"><a class="btn solid" href="#niana">See the Niana story</a><a class="btn" href="#more">See other projects</a><a class="btn" href="#contact">Get in touch</a></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee home-only" aria-hidden="true"><div>
+  <span>Social media</span><span>Brand identity</span><span>Content</span><span>Photography</span><span>Videography</span><span>Graphic design</span><span>Marketing</span><span>Branding</span>
+  <span>Social media</span><span>Brand identity</span><span>Content</span><span>Photography</span><span>Videography</span><span>Graphic design</span><span>Marketing</span><span>Branding</span>
+</div></div>
+
+<section id="about" class="home-only"><div class="wrap about" data-knot="r">
+  <div class="ph">
+    <img class="main" src="a/hinina.jpg" alt="Nina seen from above on a phone screen, held in a hand">
+  </div>
+  <div>
+    <div class="eyebrow">About</div>
+    <h2>About me</h2>
+    <p>I&rsquo;m a creative person with a passion for marketing, art and business, and I enjoy projects that bring all three together.</p>
+    <p>My background combines both sides. I graduated from IWK Art School in Slovakia, where I trained in painting, drawing, graphic design and fashion design, and from a Business Academy with a focus on entrepreneurship, economics, marketing and accounting.</p>
+    <p>Today I study Multimedia &amp; Creative Technologies at KdG in Antwerp, working across design, content and digital media.</p>
+    <p>Alongside my studies I run Niana, my own brand of handmade crochet, leather and denim bags. I do everything myself, from making the bags to the brand identity, photography, reels and website, and I&rsquo;m building an audience ahead of the launch.</p>
+    <p>I&rsquo;m now looking for a three-month internship where I can contribute to a creative team and keep growing professionally.</p>
+  </div>
+</div></section>
+
+<section style="padding-top:0" id="roles" class="home-only"><div class="wrap" data-knot="l">
+  <div class="eyebrow">What I do best</div>
+  <h2 style="margin-top:14px">Two things</h2>
+  <div class="roles">
+    <a class="role" href="#brand" style="text-decoration:none" onclick="enterNiana(event)">
+      <h3>Marketing &amp; branding</h3>
+      <p>I help ideas become brands people recognise. Identity, packaging and graphic design that stay consistent everywhere, backed by a content plan built for the right audience.</p>
+      <div class="proof"><div>1 brand<small>identity &amp; social kit</small></div><div>8 yrs<small>graphic design, since 2018</small></div><div>4 yrs<small>Business Academy, marketing &amp; economics</small></div></div>
+      <span class="tools">Figma &middot; Typography &middot; Graphic design &middot; Brand strategy</span>
+    </a>
+    <a class="role" href="#reels" style="text-decoration:none" onclick="enterNiana(event)">
+      <h3>Social media &amp; content</h3>
+      <p>I plan, film and edit short videos for Instagram and TikTok and keep the feed looking like one brand. I grew Niana&rsquo;s accounts from zero by testing ideas and learning from the numbers.</p>
+      <div class="proof"><div>0 &rarr; 105<small>Instagram followers in ~6 months</small></div><div>~4K<small>TikTok followers</small></div><div>800 &ndash; 2.4K<small>views per video</small></div></div>
+      <span class="tools">Premiere Pro &middot; CapCut &middot; After Effects &middot; Photoshop &middot; Lightroom</span>
+    </a>
+  </div>
+  <p class="also">Also from my studies: motion graphics &middot; web coding &middot; UX &middot; 3D &middot; game design &middot; marketing &amp; startup challenges</p>
+</div></section>
+
+<!-- NIANA -->
+<section class="niana" id="niana"><div class="wrap">
+  <div class="back-wrap niana-back"><button class="nback" onclick="exitNiana(event)">&larr; Back to portfolio</button></div>
+  <div class="niana-teaser" data-knot="r">
+  <div class="nhero">
+    <div>
+      <div class="eyebrow">Niana</div>
+      <h2>A bag label, taken <em>from zero to launch, in public.</em></h2>
+      <p>Niana is my own label of handmade bags in crochet, leather and denim. Ahead of the launch I&rsquo;m building the brand and a community around it, so the shop opens to people who already know the bags. Every part of it is mine, from the bags themselves to the identity, the content and the website.</p>
+      <div class="chips"><span>Photography</span><span>Videography</span><span>Content</span><span>Web</span><span style="flex-basis:100%;height:0;padding:0;margin:0;border:0"></span><span>Social media</span><span>Figma design</span><span>Brand identity</span></div>
+    </div>
+    <img class="redbag" src="a/cuba.jpg" alt="Hand holding a burgundy hand-crocheted Niana bag with beaded chains">
+  </div>
+
+  <div class="journey" data-knot="l">
+    <div class="lbl">The journey</div>
+    <h3>From hobby to brand</h3>
+    <div class="steps">
+      <div class="step"><div class="dot"></div><b>Idea</b><span>Started as a hobby: crocheting bags by hand.</span></div>
+      <div class="step"><div class="dot"></div><b>Identity</b><span>Name, monogram, colors, voice, print.</span></div>
+      <div class="step"><div class="dot"></div><b>Web design</b><span>Figma prototypes, then a coded site.</span></div>
+      <div class="step"><div class="dot"></div><b>Content</b><span>Reels, TikTok process videos, photo shoots.</span></div>
+      <div class="step now"><div class="dot pulse"></div><b>Audience</b><span>105 followers on Instagram, ~4K on TikTok.</span></div>
+      <div class="step"><div class="dot"></div><b>Launch</b><span>The shop opens. Soon.</span></div>
+    </div>
+  </div>
+
+  <div class="explore-wrap"><button class="nbtn" onclick="enterNiana(event)">Explore Niana &rarr;</button></div>
+  </div>
+
+  <div id="niana-deep" data-knot="r">
+
+  <div class="chap" data-knot="r">
+    <div class="txt"><div class="lbl">Chapter 1</div><h3>Photo gallery</h3>
+      <p>I take some of the photos myself, and a good friend who works as a professional photographer helps me a lot with the shoots. We work with natural light and soft shadows, and I edit every photo myself in Lightroom.</p></div>
+    <div class="mosaic">
+      <div class="c6"><img class="shot ar34 cover" src="a/ph01.jpg" alt=""></div>
+      <div class="c6"><img class="shot ar34 cover" src="a/ph03.jpg" alt=""></div>
+      <div class="c4"><img class="shot ar34 cover" src="a/ph07.jpg" alt=""></div>
+      <div class="c4"><img class="shot ar34 cover" src="a/ph12.jpg" alt=""></div>
+      <div class="c4"><img class="shot ar34 cover" src="a/ph14.jpg" alt=""></div>
+    </div>
+  </div>
+  <div style="padding-bottom:clamp(56px,7vw,110px)">
+    <div class="lbl" style="margin-bottom:14px">More from the shoot &mdash; drag &rarr;</div>
+    <div class="strip">
+      <img src="a/gal01.jpg" alt=""><img src="a/gal02.jpg" alt=""><img src="a/gal03.jpg" alt=""><img src="a/gal04.jpg" alt=""><img src="a/gal05.jpg" alt=""><img src="a/gal06.jpg" alt=""><img src="a/gal07.jpg" alt=""><img src="a/gal08.jpg" alt=""><img src="a/gal09.jpg" alt=""><img src="a/gal10.jpg" alt=""><img src="a/gal11.jpg" alt=""><img src="a/gal12.jpg" alt=""><img src="a/gal13.jpg" alt=""><img src="a/gal14.jpg" alt="">
+    </div>
+  </div>
+
+  <div class="reels" id="reels" data-knot="l">
+    <div class="head">
+      <div><div class="lbl">Chapter 2 &mdash; Content</div><h3>Reels I film &amp; edit</h3></div>
+      <p>I shoot on my phone, edit mainly in Premiere Pro, if needed in After Effects, and post on Instagram and TikTok. Here are a few. Tap a video to turn the sound on.</p>
+    </div>
+    <div class="phones">
+      <div class="phone"><video src="a/reel-process.mp4" poster="a/reel-process.jpg" muted loop playsinline preload="metadata" aria-label="Niana reel, Process video"></video><span class="plat">Reel</span><button class="snd" type="button" aria-label="Turn sound on">&#128263;</button><div class="pl">Process video</div></div>
+      <div class="phone"><video src="a/reel-trio2.mp4" poster="a/reel-trio2.jpg" muted loop playsinline preload="metadata" aria-label="Niana reel, Outfit, bag, makeup"></video><span class="plat">Reel</span><button class="snd" type="button" aria-label="Turn sound on">&#128263;</button><div class="pl">Outfit, bag, makeup</div></div>
+      <div class="phone"><video src="a/reel-wear.mp4" poster="a/reel-wear.jpg" muted loop playsinline preload="metadata" aria-label="Niana reel, What I would wear"></video><span class="plat">Reel</span><button class="snd" type="button" aria-label="Turn sound on">&#128263;</button><div class="pl">What I would wear</div></div>
+      <div class="phone"><video src="a/reel-bag.mp4" poster="a/reel-bag.jpg" muted loop playsinline preload="metadata" aria-label="Niana reel, What&rsquo;s in my bag"></video><span class="plat">Reel</span><button class="snd" type="button" aria-label="Turn sound on">&#128263;</button><div class="pl">What&rsquo;s in my bag</div></div>
+    </div>
+    <div class="edit">
+      <div><b>Film</b><span>Phone or a friend&rsquo;s camera, natural light, planned shots.</span></div>
+      <div><b>Cut</b><span>Rhythm and story in Premiere Pro.</span></div>
+      <div><b>Polish</b><span>Color, text, sound, small motion touches.</span></div>
+      <div><b>Post</b><span>Instagram and TikTok, then read the numbers.</span></div>
+    </div>
+  </div>
+
+  <div class="chap" data-knot="r">
+    <div class="txt"><div class="lbl">Chapter 3</div><h3>Social media</h3>
+      <p>For Niana I made a launching soon post, a story template and six highlight covers. They all share the same pink and the same stitch detail, so the profile feels like one brand.</p>
+      <p>Below them you can see the real Instagram and TikTok profiles, with the views the first videos and posts got.</p></div>
+    <div class="mosaic" style="align-items:start">
+      <div class="c4"><img class="shot" src="a/m-post-launch.jpg" alt="Launching soon post"></div>
+      <div class="c8"><div style="display:grid;grid-template-columns:repeat(3,21.8%);justify-content:center;column-gap:8%;row-gap:clamp(10px,1.6vw,22px)"><img class="shot" src="a/m-hl-na.jpg" alt="Highlight cover NA"><img class="shot" src="a/m-hl-shop.jpg" alt="Highlight cover shop"><img class="shot" src="a/m-hl-love.jpg" alt="Highlight cover love"><img class="shot" src="a/m-hl-edit.jpg" alt="Highlight cover edit"><img class="shot" src="a/m-hl-en.jpg" alt="Highlight cover EN"><img class="shot" src="a/m-hl-sk.jpg" alt="Highlight cover SK"></div><div class="cap" style="margin-left:9.3%">Highlight covers</div></div>
+      <div class="c12"><div style="display:flex;gap:clamp(10px,1.6vw,22px);align-items:flex-start;justify-content:center">
+        <div style="flex:.5625 1 0;min-width:0"><img class="shot" src="a/m-story.jpg" alt="Niana story template"><div class="cap">Story template</div></div>
+        <div style="flex:.576 1 0;min-width:0"><img class="shot" src="a/ig-new.jpg" alt="Niana Instagram profile with highlights and real post views"><div class="cap">Instagram, real posts &amp; views</div></div>
+        <div style="flex:.533 1 0;min-width:0"><img class="shot" src="a/tiktok.jpg" alt="Niana TikTok profile with real video views"><div class="cap">TikTok, real videos &amp; views</div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="chap" id="brand" data-knot="l">
+    <div class="txt"><div class="lbl">Chapter 4</div><h3>Brand identity</h3>
+      <p>I designed the whole look of Niana myself. It has a hand-drawn script monogram, four colors (stone, ink, white and pink) and three fonts.</p>
+      <p>The running stitch pattern comes straight from how the bags are made, and it&rsquo;s the same thread you&rsquo;ve been following down this page.</p></div>
+    <div class="mosaic">
+      <div class="c12"><img class="shot" src="a/m-guide.jpg" alt="Niana brand guidelines: logo, color, typography, pattern, applications"><div class="cap">Brand guidelines</div></div>
+      <div class="c6" style="display:flex;flex-direction:column"><img class="shot" src="a/m-intro.jpg" alt="Niana brand identity intro sheet"><div class="cap" style="margin-top:auto;padding-top:8px">The brand</div></div>
+      <div class="c6" style="display:flex;flex-direction:column"><img class="shot" src="a/m-pattern.jpg" alt="Running-stitch pattern system"><div class="cap" style="margin-top:auto;padding-top:8px">Running-stitch pattern</div></div>
+      <div class="c6"><img class="shot" src="a/m-tag.jpg" alt="Niana hangtag, cream front and pink back"><div class="cap">Hangtag</div></div>
+      <div class="c6"><img class="shot" src="a/m-cards.jpg" alt="Niana business cards, pink and cream"><div class="cap">Business cards</div></div>
+    </div>
+  </div>
+
+  <div class="chap" data-knot="r">
+    <div class="txt"><div class="lbl">Chapter 5</div><h3>Website: designed by me</h3>
+      <p>The website isn&rsquo;t finished yet, but I designed it in Figma in two directions first: a soft pink one and a deep burgundy one.</p>
+      <p>You can check out the work-in-progress build here: <a href="https://jakubmichalec-debug.github.io/niana/" target="_blank" rel="noopener" style="color:var(--neon)">jakubmichalec-debug.github.io/niana</a></p></div>
+    <div class="mosaic">
+      <div class="c8"><div class="browser"><div class="bar"><i></i><i></i><i></i><em>niana &mdash; pink direction</em></div><div class="scroll" tabindex="0"><img src="a/niana-site-full.jpg" alt="Niana website, pink direction: hero, new arrivals, explore the bags, footer"></div></div></div>
+      <div class="c4"><div class="browser"><div class="bar"><i></i><i></i><i></i><em>burgundy direction</em></div><div class="scroll" tabindex="0"><img src="a/fig-burg-full.jpg" alt="Niana website design, burgundy direction"></div></div><div class="cap">Second direction &mdash; burgundy</div></div>
+    </div>
+  </div>
+  </div>
+</div></section>
+
+<section class="studies home-only" id="studies"><div class="wrap" data-knot="l">
+  <div class="eyebrow">Skills</div>
+  <h2 style="margin-top:14px">What I can do</h2>
+  <div class="tiles">
+    <div class="tile hi"><h3>Marketing &amp; strategy</h3><p>Audience growth, content planning, startup and branding challenges.</p><span class="t">Niana brand</span></div>
+    <div class="tile hi"><h3>Graphic design</h3><p>Identity, typography, layout, social templates, print.</p><span class="t">Photoshop &middot; Lightroom</span></div>
+    <div class="tile hi"><h3>Social &amp; content</h3><p>Planning a content calendar, captions and posting cadence, growing a feed people actually follow.</p><span class="t">Instagram &middot; TikTok</span></div>
+    <div class="tile"><h3>Photo &amp; video</h3><p>Filming, editing, color and sound, plus photo direction and shoots.</p><span class="t">Premiere Pro &middot; CapCut &middot; Lightroom</span></div>
+    <div class="tile"><h3>UX &amp; web</h3><p>Interface design in Figma, plus web coding basics.</p><span class="t">Figma &middot; HTML / CSS</span></div>
+    <div class="tile"><h3>3D &amp; prototyping</h3><p>3D modeling, VFX basics, prototyping in the FabLab.</p><span class="t">Blender &middot; FreeCAD &middot; Unity</span></div>
+    <div class="tile"><h3>Motion graphics</h3><p>Animated titles and small motion touches for edits.</p><span class="t">After Effects</span></div>
+    <div class="tile"><h3>Game design &amp; code</h3><p>Game design principles, real-time 3D and programming fundamentals.</p><span class="t">C# &middot; C++</span></div>
+  </div>
+</div></section>
+
+<section id="more" class="home-only"><div class="wrap" data-knot="r">
+  <div class="eyebrow">Smaller projects</div>
+  <h2 style="margin-top:14px">More work</h2>
+  <div class="grid3">
+    <a class="proj" href="#pp" onclick="enterProj('pp',event)" style="text-decoration:none"><div class="frame"><img src="a/mw-pinball.jpg" alt="Hand-painted pinball machine, built in the FabLab"></div><span class="tag">Art direction &middot; Hand painting</span><h3>Pinball machine</h3><p>A real, playable pinball machine built in the FabLab. I designed the playfield, gave it a psychedelic look and painted every surface by hand.</p></a>
+    <a class="proj" href="#co" onclick="enterProj('co',event)" style="text-decoration:none"><div class="frame"><img src="a/mw-graphicdesign.jpg" alt="Coachella festival rebrand poster"></div><span class="tag">Branding &middot; UI &middot; Campaign</span><h3>Coachella rebrand</h3><p>Coachella, reimagined. A new logo, a festival app and a full social and print campaign.</p></a>
+    <a class="proj" href="#sd" onclick="enterProj('sd',event)" style="text-decoration:none"><div class="frame"><img src="a/mw-shotdispenser.jpg" alt="Shot Dispenser, a cashless drink dispenser for festivals"></div><span class="tag">Product design &middot; Coding &middot; Branding</span><h3>Shot Dispenser</h3><p>Tap your wristband, get a shot. A cashless drink dispenser I designed, coded and built for my Coachella festival.</p></a>
+  </div>
+</div></section>
+
+<!-- PINBALL -->
+<section id="pp-deep" class="niana" data-knot="r"><div class="wrap">
+  <div class="back-wrap"><button class="nback" onclick="exitNiana(event)">&larr; Back to portfolio</button></div>
+  <div class="nhero" style="padding-top:0" id="pp">
+    <div>
+      <div class="eyebrow">Project &middot; FabLab, team build</div>
+      <h2>A pinball machine, <em>built from scratch.</em></h2>
+      <p>This is a working arcade pinball machine we built in KdG's FabLab, made with two teammates. Jakub Michalec handled the mechanical build and Grigor Grigorov did the electronics. My part was all the creative work, the playfield layout, the whole visual concept, and painting every surface by hand.</p>
+      <div class="chips"><span>Visual design</span><span>Playfield layout</span><span>Moodboard</span><span>Painted by hand</span></div>
+    </div>
+    <img class="redbag" src="a/pp-playfield.jpg" alt="Hand-painted pinball playfield with barriers and targets, top view">
+  </div>
+
+  <div class="chap" data-knot="r">
+    <div class="txt"><div class="lbl">Chapter 1</div><h3>The idea</h3>
+      <p>None of us had built a pinball machine before. The idea was just to build one from scratch, but getting there meant a lot of research and testing. It took us about six months, figuring out how the flippers should work, how the ball should move, and what we could actually make ourselves in the FabLab. Once we had a solid plan, I took the lead on how the whole thing would look and feel, which was the part I was most excited about.</p></div>
+    <div class="mosaic">
+      <div class="c12"><img class="shot" src="a/pp-idea-cutout.png" alt="The finished pinball machine, three-quarter view, cut out"><div class="cap">The finished machine</div></div>
+    </div>
+  </div>
+
+  <div class="chap" data-knot="l">
+    <div class="txt"><div class="lbl">Chapter 2</div><h3>Layout &amp; visual design</h3>
+      <p>I designed the playfield layout myself, where the targets, ramps, barriers and flippers sit, and how the ball actually moves through the machine. I tested and rebuilt it many times until it felt balanced.</p>
+      <p>For the look, I moved us away from a plain school themed idea toward something more fun. I built a psychedelic, surreal mood from a Pinterest moodboard and a five color palette, and painted every visible surface by hand.</p></div>
+    <div class="mosaic">
+      <div class="c12"><img class="shot" src="a/pp-moodboard.jpg" alt="Psychedelic moodboard and five-color palette for the pinball machine"><div class="cap">Moodboard &amp; palette</div></div>
+    </div>
+  </div>
+
+  <div class="chap" data-knot="r">
+    <div class="txt"><div class="lbl">Chapter 3</div><h3>Gallery</h3>
+      <p>The finished result, the visual concept and the artwork I painted by hand, up close and from every side.</p></div>
+    <div class="mosaic" style="align-items:start">
+      <div class="c6" style="display:flex;flex-direction:column;gap:clamp(10px,1.6vw,22px)">
+        <div><img class="shot gcover" src="a/pp-front-panel-full.png" alt="Front panel with the hand-painted JNG logo and character art"><div class="cap">The front panel</div></div>
+        <div><img class="shot gcover" src="a/pp-ramp-detail.png" alt="Close-up of the hand-painted purple ramp on the playfield"><div class="cap">The ramp, up close</div></div>
+      </div>
+      <div class="c6" style="display:flex;flex-direction:column;gap:clamp(10px,1.6vw,22px)">
+        <div><img class="shot gcover" src="a/pp-full-front-top.png" alt="The finished machine, three-quarter view from the front"><div class="cap">The finished machine</div></div>
+        <div><img class="shot gcover" src="a/pp-full-back-mushroom.png" alt="The finished machine from the back, with a hand-painted mushroom design"><div class="cap">The back panel, painted by hand</div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- COACHELLA -->
+<section id="co-deep" class="niana" data-knot="l"><div class="wrap">
+  <div class="back-wrap"><button class="nback" onclick="exitNiana(event)">&larr; Back to portfolio</button></div>
+  <div class="nhero" style="padding-top:0" id="co">
+    <div>
+      <div class="eyebrow">University project &middot; Brand &amp; UI design</div>
+      <h2>Coachella, <em>where my graphic design started.</em></h2>
+      <p>This was a university project at KdG. We could choose any brand to redesign, and I picked Coachella. I rebranded it from the ground up with a new logo and mood, an app concept, and the social and print materials a festival like this needs. It was the start of my graphic design work, and the project that made me want to keep going in that direction.</p>
+      <div class="chips"><span>Branding</span><span>Logo design</span><span>UI/UX</span><span>Social media</span><span>Print</span></div>
+    </div>
+    <img class="redbag" style="aspect-ratio:722/1022" src="a/co-poster.jpg" alt="Coachella lineup poster, redesigned">
+  </div>
+
+  <div class="chap" data-knot="r">
+    <div class="txt"><div class="lbl">Chapter 1</div><h3>Moodboard &amp; logo</h3>
+      <p>I built a moodboard around sunset colors, palm trees and festival energy, then designed a new logo: a flower-shaped mark from the same palette, sized to work as a small app icon or a big print on a wristband.</p></div>
+    <div class="mosaic">
+      <div class="c6"><img class="shot gcover" src="a/co-visuals.jpg" alt="Coachella visual moodboard"><div class="cap">Moodboard</div></div>
+      <div class="c6"><img class="shot gcover" src="a/co-mood2.jpg" alt="Coachella color and mood references"><div class="cap">Mood references</div></div>
+      <div class="c6"><img class="shot gcover" src="a/co-mood3.jpg" alt="Coachella app and social inspiration references"><div class="cap">App and social inspiration</div></div>
+      <div class="c6" style="display:flex;align-items:center;justify-content:center"><div style="width:55%;text-align:center"><img class="shot" src="a/co-logo.jpg" alt="Coachella logo redesign"><div class="cap">Logo</div></div></div>
+    </div>
+  </div>
+
+  <div class="chap" data-knot="l">
+    <div class="txt"><div class="lbl">Chapter 2</div><h3>App design</h3>
+      <p>I designed a companion app: a welcome screen carrying the new logo and colors, a Discover feed for the lineup, and a countdown screen with passes, camping and shipping info. Everything uses the same pink and orange palette as the rest of the brand.</p></div>
+    <div class="mosaic">
+      <div class="c12">
+        <div class="strip3">
+          <div><img src="a/co-app-welcome.jpg" alt="Coachella app welcome and sign-in screen"></div>
+          <div><img src="a/co-app-discover.jpg" alt="Coachella app Discover feed screen"></div>
+          <div><img src="a/co-app-countdown.jpg" alt="Coachella app countdown screen"></div>
+        </div>
+        <div class="strip3caps"><div class="cap">Welcome &amp; sign in</div><div class="cap">Discover</div><div class="cap">Countdown</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chap" data-knot="r">
+    <div class="txt"><div class="lbl">Chapter 3</div><h3>Social &amp; campaign</h3>
+      <p>For the campaign I designed an Instagram post, a Facebook banner and a Twitter banner, carrying the logo and palette across every platform so the brand feels the same wherever people see it.</p></div>
+    <div class="mosaic">
+      <div class="c12" style="display:flex;justify-content:center"><div style="width:33%;min-width:220px"><img class="shot" src="a/co-instagram.jpg" alt="Coachella Instagram post"><div class="cap" style="text-align:center">Instagram post</div></div></div>
+      <div class="c12"><img class="shot bcover" src="a/co-facebook.jpg" alt="Coachella Facebook banner"><div class="cap">Facebook banner</div></div>
+      <div class="c12"><img class="shot bcover" src="a/co-twitter.jpg" alt="Coachella Twitter banner"><div class="cap">Twitter banner</div></div>
+    </div>
+  </div>
+
+  <div class="chap" data-knot="l">
+    <div class="txt"><div class="lbl">Chapter 4</div><h3>Print &amp; merch</h3>
+      <p>The rollout ends on paper and on wrist: a flyer and a lineup poster with the full bill, and four wristband tiers (standard, standing, VIP and backstage) that reuse the logo and palette. I later reused these same wristbands as the NFC tags for my <a href="#sd" onclick="enterProj('sd',event)" style="color:var(--neon)">Shot Dispenser</a> project.</p></div>
+    <div class="mosaic">
+      <div class="c6"><img class="shot pcover" src="a/co-flyer.jpg" alt="Coachella flyer"><div class="cap">Flyer</div></div>
+      <div class="c6"><img class="shot pcover" src="a/co-poster.jpg" alt="Coachella lineup poster"><div class="cap">Lineup poster</div></div>
+      <div class="c12"><img class="shot" src="a/co-wristbands.jpg" alt="Coachella wristband tiers: standard, standing, VIP, backstage"><div class="cap">Wristband tiers</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- SHOT DISPENSER -->
+<section id="sd-deep" class="niana" data-knot="r"><div class="wrap">
+  <div class="back-wrap"><button class="nback" onclick="exitNiana(event)">&larr; Back to portfolio</button></div>
+  <div class="nhero" style="padding-top:0" id="sd">
+    <div>
+      <div class="eyebrow">University project &middot; Arduino + coding</div>
+      <h2>A cashless drink dispenser <em>for my Coachella festival.</em></h2>
+      <p>This project grew straight out of my <a href="#co" onclick="enterProj('co',event)" style="color:var(--neon)">Coachella rebrand</a>. After designing the festival and its wristbands, I got the idea for a drink stand that works with them. You tap your NFC wristband, the machine checks your balance and pours the drink by itself.</p><p>I built it myself with an Arduino, an NFC reader, a water pump in place of a real tap, and LED and LCD feedback. It has less to do with graphic design and a lot more to do with coding, and that is why I wanted to show it here.</p>
+      <div class="chips"><span>Arduino</span><span>Coding</span><span>NFC</span><span>Sensors</span><span>Electronics</span></div>
+    </div>
+    <img class="redbag" style="object-position:center" src="a/mw-shotdispenser.jpg" alt="Shot Dispenser on a pink background, with LCD, NFC reader and a red cup">
+  </div>
+
+  <div class="chap" data-knot="r">
+    <div class="txt"><div class="lbl">Chapter 1</div><h3>How it works</h3>
+      <p>A guest taps an NFC-tagged wristband on the reader. The Arduino checks the balance: a green LED and a short pump cycle mean the drink pours, a red LED and a buzzer mean it didn't go through. A water-level sensor watches the tank and switches the LCD to &ldquo;Out of Water&rdquo; before it runs dry.</p></div>
+    <div class="mosaic">
+      <div class="c12" style="display:flex;justify-content:flex-end"><div class="sdiag"><img class="shot" style="aspect-ratio:4/5;object-fit:contain;background:#fff;padding:4%" src="a/sd-diagram.jpg" alt="Shot Dispenser system diagram"><div class="cap">System diagram</div></div></div>
+    </div>
+  </div>
+
+  <div class="chap" data-knot="l">
+    <div class="txt"><div class="lbl">Chapter 2</div><h3>Building it</h3>
+      <p>The whole system lives inside a hand-decorated cardboard housing: an Arduino, a 6V water pump feeding a hose from a small reservoir, a buzzer and an NFC reader, all wired on a breadboard tucked inside.</p><p>Most of the work was the code. I started with small LED tests and built it up step by step until the reader, the pump, the water sensor and the screen all worked together.</p></div>
+    <div class="mosaic">
+      <div class="c12" style="display:flex;justify-content:flex-end"><div class="sdiag"><img class="shot" src="a/sd-inside-up.jpg" alt="Pump, reservoir and wiring inside the Shot Dispenser housing"><div class="cap">Pump, reservoir &amp; wiring, inside the box</div></div></div>
+    </div>
+  </div>
+
+  <div class="chap" data-knot="r">
+    <div class="txt"><div class="lbl">Chapter 3</div><h3>The result</h3>
+      <p>The front panel carries the LCD, the NFC reader and a cup rest under the pour spout, on a hand-drawn pattern that matches the rest of my festival work. For the NFC tags I reused the wristbands from my <a href="#co" onclick="enterProj('co',event)" style="color:var(--neon)">Coachella rebrand</a>, so the two projects connect.</p></div>
+    <div class="mosaic">
+      <div class="c12"><div style="display:flex;gap:clamp(10px,1.6vw,22px);align-items:center;justify-content:center">
+        <div style="flex:none;width:40%"><img class="plain" src="a/sd-front-cut2.png" alt="Shot Dispenser front panel, cut out"><div class="cap">Front panel</div></div>
+        <div style="flex:none;width:43%"><img class="plain" src="a/sd-box-art-cut.png" alt="Hand-drawn pattern on the Shot Dispenser housing"><div class="cap">Hand-drawn housing</div></div>
+      </div></div>
+      <div class="c12" style="display:flex;justify-content:center"><div style="width:46%;min-width:240px"><img class="plain" src="a/sd-tags-cut.png" alt="Coachella wristbands reused as NFC tags for the Shot Dispenser"><div class="cap">Coachella wristbands, reused as NFC tags</div></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="studies home-only"><div class="wrap" data-knot="l">
+  <div class="eyebrow">Education &amp; experience</div>
+  <h2 style="margin-top:14px">Where I learned</h2>
+  <div class="edu">
+    <div class="row now"><span class="yr">2024 &ndash; now</span><h3>KdG University of Applied Sciences</h3><p>Multimedia &amp; Creative Technologies, Antwerp. Digital media, graphic design, audiovisual work, 3D, prototyping and interactive projects. The program ends with an internship.</p></div>
+    <div class="row"><span class="yr">2020 &ndash; 2024</span><h3>Business Academy</h3><p>Economics, business, marketing, accounting and finance.</p></div>
+    <div class="row"><span class="yr">2012 &ndash; 2021</span><h3>IWK Art School</h3><p>Almost ten years of painting, drawing, graphic design and fashion design.</p></div>
+    <div class="row"><span class="yr">Work</span><h3>Hospitality &amp; HR</h3><p>Customer contact, teamwork and reliability, learned on the job.</p></div>
+  </div>
+</div></section>
+
+<section class="contact home-only" id="contact"><div class="wrap" data-knot="r">
+  <div class="eyebrow">Let&rsquo;s work together</div>
+  <div class="huge">Let&rsquo;s<br>stitch<br>something<span>.</span></div>
+  <div class="cols">
+    <p>Looking for a 3-month internship in marketing, social media and content, graphic design, photography or branding.</p>
+    <p style="color:var(--mute);font-size:16px;margin-top:-10px">KdG University of Applied Sciences, Antwerp</p>
+    <div class="cta" style="position:relative;z-index:2"><span class="btn solid static">nina.hajdikova@student.kdg.be</span><span class="btn solid static">@niana.bags on Instagram</span></div>
+  </div>
+  <img class="cutwrap" src="a/nina-cut-pink.png" alt="">
+</div>
+<footer><span>Nina Hajdikova</span><span>Portfolio 2026</span></footer>
+</section>
+</div>
+
+<script>
+(function(){
+  var page=document.getElementById('page'),svg=document.getElementById('thread'),
+      base=document.getElementById('tbase'),drawn=document.getElementById('tdrawn'),
+      mp=document.getElementById('tmaskpath'),needle=document.getElementById('tneedle');
+  var L=0,ticking=false,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function build(){
+    if(innerWidth<760){return}
+    svg.style.height='0px';
+    var W=page.clientWidth,H=page.scrollHeight,top=page.getBoundingClientRect().top+scrollY;
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.style.height=H+'px';
+    var ks=[].slice.call(document.querySelectorAll('[data-knot]')).filter(function(el){return el.offsetParent!==null}).map(function(el){
+      var r=el.getBoundingClientRect();
+      return {y:r.top+scrollY-top+Math.min(r.height*0.3,180),x:el.getAttribute('data-knot')==='l'?22:W-22};
+    });
+    if(!ks.length)return;
+    var d='M '+ks[0].x+' '+ks[0].y;
+    for(var i=1;i<ks.length;i++){
+      var a=ks[i-1],b=ks[i],dy=(b.y-a.y)*0.55;
+      d+=' C '+a.x+' '+(a.y+dy)+' '+b.x+' '+(b.y-dy)+' '+b.x+' '+b.y;
+    }
+    d+=' L '+ks[ks.length-1].x+' '+H;
+    base.setAttribute('d',d);drawn.setAttribute('d',d);mp.setAttribute('d',d);
+    L=base.getTotalLength();mp.style.strokeDasharray=L+' '+L;update();
+  }
+  function update(){
+    ticking=false;if(!L)return;
+    var p=reduce?1:Math.min(1,Math.max(0,(scrollY+innerHeight*0.65)/page.scrollHeight));
+    mp.style.strokeDashoffset=L*(1-p);
+    var pt=base.getPointAtLength(L*p),pt2=base.getPointAtLength(Math.min(L,L*p+6));
+    var ang=Math.atan2(pt2.y-pt.y,pt2.x-pt.x)*180/Math.PI;
+    needle.setAttribute('transform','translate('+pt.x+','+pt.y+') rotate('+ang+')');
+    needle.style.display=p>=0.999?'none':'';
+  }
+  addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});
+  addEventListener('resize',build);addEventListener('load',build);
+  window.enterNiana=function(e){if(e&&e.preventDefault)e.preventDefault();document.body.classList.remove('pp-mode','co-mode','sd-mode');document.body.classList.add('niana-mode');requestAnimationFrame(function(){build();var t=document.getElementById('niana');if(t){var y=t.getBoundingClientRect().top+scrollY-60;scrollTo({top:y,behavior:reduce?'auto':'smooth'})}})};
+  window.exitNiana=function(e){document.body.classList.remove('niana-mode','pp-mode','co-mode','sd-mode');requestAnimationFrame(build)};
+  window.enterProj=function(mode,e){if(e&&e.preventDefault)e.preventDefault();document.body.classList.remove('niana-mode','pp-mode','co-mode','sd-mode');document.body.classList.add(mode+'-mode');requestAnimationFrame(function(){build();var t=document.getElementById(mode+'-deep');if(t){var y=t.getBoundingClientRect().top+scrollY-60;scrollTo({top:y,behavior:reduce?'auto':'smooth'})}})};
+  if(window.ResizeObserver){new ResizeObserver(function(){build()}).observe(page)}
+  build();
+})();
+
+
+(function(){
+  var vids=[].slice.call(document.querySelectorAll('.phone video'));
+  if(!vids.length)return;
+  function setSnd(v,on){var b=v.parentNode.querySelector('.snd');v.muted=!on;if(b){b.innerHTML=on?'&#128266;':'&#128263;';b.setAttribute('aria-label',on?'Turn sound off':'Turn sound on')}}
+  function toggle(v){var on=v.muted;vids.forEach(function(o){if(o!==v)setSnd(o,false)});setSnd(v,on);var p=v.play();if(p&&p.catch)p.catch(function(){})}
+  vids.forEach(function(v){
+    v.addEventListener('click',function(){toggle(v)});
+    var b=v.parentNode.querySelector('.snd');if(b)b.addEventListener('click',function(e){e.stopPropagation();toggle(v)});
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}})},{threshold:.35});
+    vids.forEach(function(v){io.observe(v)});
+  }
+})();
+</script>
+
+</body></html>
